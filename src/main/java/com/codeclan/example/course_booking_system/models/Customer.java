@@ -3,27 +3,27 @@ package com.codeclan.example.course_booking_system.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "courses")
-public class Course {
+@Table(name = "customers")
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(name = "name")
     private String name;
     @Column(name = "town")
     private String town;
-    @Column(name = "rating")
-    private double rating;
+    @Column(name = "age")
+    private int age;
 
-    public Course(String name, String town, double rating) {
+    public Customer(Long id, String name, String town, int age) {
+        this.id = id;
         this.name = name;
         this.town = town;
-        this.rating = rating;
+        this.age = age;
     }
-
-    public Course() {}
+    
+    public Customer(){}
 
     public Long getId() {
         return id;
@@ -49,11 +49,11 @@ public class Course {
         this.town = town;
     }
 
-    public double getRating() {
-        return rating;
+    public int getAge() {
+        return age;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
+    public void setAge(int age) {
+        this.age = age;
     }
 }
