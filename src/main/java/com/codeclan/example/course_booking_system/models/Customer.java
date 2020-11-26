@@ -24,14 +24,13 @@ public class Customer {
     @JsonIgnoreProperties({"customers"})
     private List<Booking> bookings;
 
-    public Customer(Long id, String name, String town, int age) {
-        this.id = id;
+    public Customer(String name, String town, int age) {
         this.name = name;
         this.town = town;
         this.age = age;
         this.bookings = new ArrayList<>();
     }
-    
+
     public Customer(){}
 
     public Long getId() {
@@ -72,5 +71,9 @@ public class Customer {
 
     public void setBookings(List<Booking> bookings) {
         this.bookings = bookings;
+    }
+
+    public void addBooking(Booking booking){
+        this.bookings.add(booking);
     }
 }
