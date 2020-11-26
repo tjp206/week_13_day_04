@@ -36,4 +36,3 @@ public class CustomerController {
     }
 }
 
-// List<Customer> findCustomersByBookingsCourseName(String name);
