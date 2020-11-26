@@ -50,13 +50,13 @@ class CourseBookingSystemApplicationTests {
 
 	@Test
 	public void canGetCustomerByCourseName(){
-		List<Customer> foundCustomers = customerRepository.findCustomersByBookingsCourseName("Software Development");
+		List<Customer> foundCustomers = customerRepository.findCustomersByBookingsCourseNameIgnoreCase("Software Development");
 		assertEquals(2, foundCustomers.size());
 	}
 
 	@Test
 	public void canGetCourseByCustomerName(){
-		List<Course> foundCourses = courseRepository.findCoursesByBookingsCustomerName("Craig");
+		List<Course> foundCourses = courseRepository.findCoursesByBookingsCustomerNameIgnoreCase("Craig");
 		assertEquals(1, foundCourses.size());
 	}
 
